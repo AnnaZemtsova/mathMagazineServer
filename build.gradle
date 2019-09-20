@@ -1,0 +1,71 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.3.RELEASE")
+    }
+}
+
+
+
+plugins {
+    id 'java'
+}
+apply plugin: 'war'
+war {
+    baseName = 'spring-boot-war-example'
+    version = '0.0.1-SNAPSHOT'
+}
+
+group 'mathMagServer'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+configurations {
+    providedRuntime
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot
+    compile group: 'org.springframework.boot', name: 'spring-boot', version: '2.1.4.RELEASE'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.16'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.4.RELEASE'
+    testCompile group: 'org.hsqldb', name: 'hsqldb', version: '2.4.1'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.4.RELEASE'
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.0.2.Final'
+// https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.8'
+
+// https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl
+    compile group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.2.10'
+// https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core
+    compile group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.2.10'
+// https://mvnrepository.com/artifact/com.sun.activation/javax.activation
+    compile group: 'com.sun.activation', name: 'javax.activation', version: '1.2.0'
+// https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
+    compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.8.13'
+    // https://mvnrepository.com/artifact/javax.mail/javax.mail-api
+    compile group: 'javax.mail', name: 'javax.mail-api', version: '1.6.2'
+
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.1.5.RELEASE'
+
+// https://mvnrepository.com/artifact/org.springframework/spring-context-support
+    compile group: 'org.springframework', name: 'spring-context-support', version: '5.1.7.RELEASE'
+
+// https://mvnrepository.com/artifact/com.sun.mail/javax.mail
+    compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-tomcat
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.1.5.RELEASE'
+
+
+    //providedRuntime "org.springframework.boot:spring-boot-starter-tomcat", version: '2.1.5.RELEASE'
+// https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '5.1.7.RELEASE'
+}
